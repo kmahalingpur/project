@@ -1,0 +1,87 @@
+
+{% extends 'blog/base.html' %}
+
+{% load staticfiles %}
+<html lang="en">
+    <head>
+        <title>Happy Hours</title>
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+        <link rel="stylesheet" href="{% static 'css/blog.css' %}">
+        <link href="http://fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+    </head>
+    <body>
+        <div class="page-header">
+            <h1><a href="">Happy Hours</a></h1>
+        </div>
+        <div class="content container">
+            <div class="row">
+               <div class="col-md-9">
+                   {% block content %}
+                 {% for post in posts %}
+                    <div class="post">
+                       <div class="date">
+                        <p>published: {{ post.published_date }}</p>
+                       </div>
+                       <h1><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h1>
+                        <p>{{ post.text|linebreaks }}</p>
+                    </div>
+                 {% endfor %}
+                   {% endblock %}
+               </div>
+               <div class="col-md-3">
+                   {% block contact %}
+                   <div class="row">
+                       Contact to Admin :<br>
+                       Email :<i class="fa fa-envelope" aria-hidden="true"></i>&nbsp;&nbsp;<a href="mailto:mdsamiul05@gmail.com" target="_blank">Click To Email Directly.</a> <br>
+                       Facbook : <i class="fa fa-facebook-square" aria-hidden="true"></i>&nbsp;&nbsp;<a href="https://www.facebook.com/samiul12"  target="_blank">I am In Facebook. Click Me!</a><br>
+                       Linkedin : <i class="fa fa-linkedin" aria-hidden="true"></i>&nbsp;&nbsp;<a href="https://in.linkedin.com/in/md-samiul-alim-b43219b2" target="_blank" >Access Me In Linkedin. Click Me!</a><br>
+                       Twitter : <i class="fa fa-twitter" aria-hidden="true"></i>&nbsp;&nbsp;<a href="https://twitter.com/mdsamiul05" target="_blank" >To Reach In Twitter. Click Me!</a>
+                    </div>
+
+                    <div class="row">
+                        <img src="http://www.owyheefamilydental.com/wp-content/uploads/2013/11/happy-visits-group.png"></img>
+                        <p>“To be kind to all, to like many and love a few, to be needed and wanted by those we love,
+                        is certainly the nearest we can come to happiness.” <br>--Mary Stuart</p>
+                    </div>
+
+                    <div class="row">
+                        <img src="http://i2.wp.com/holidaysandobservances.net/wp-content/uploads/2015/05/Environment-Day.png" style="width: 300px;height: 200px;"></img>
+                        <p>Go Green ! Save Your Home. Save Your world!</p>
+                        <p>--Reduce Your Waste.<br>
+                            --Give Up Bottled Water.<br>
+                            --Conserve Energy.<br>
+                            --Conserve Water.<br>
+                            --Green Your Transportation.<br>
+                            --Eat Local, Organic Foods.<br>
+                            --Go Chemical-Free.<br>
+                        </p>
+                    </div>
+
+                    <div class="row">
+                        <img src="http://www.studying-in-germany.org/wp-content/uploads/2013/01/Fotolia_42575468_Subscription_XXL.jpg" style="width: 300px;height: 200px;"></img>
+                        <p>Learn & do practice.</p>
+                    </div>
+
+                    <div class="row">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/0/0d/Prog-languages.png" style="width: 300px;height: 200px;"></img>
+                        <p>Learn & do practice.</p>
+                    </div>
+
+                   {% endblock %}
+               </div>
+            </div>
+        </div>
+        <div>
+            <p>published: 14.06.2014, 12:14</p>
+            <h2><a href="">My first post</a></h2>
+            <p>Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+        </div>
+
+        <div>
+            <p>published: 14.06.2014, 12:14</p>
+            <h2><a href="">My second post</a></h2>
+            <p>Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut f.</p>
+        </div>
+    </body>
+</html>

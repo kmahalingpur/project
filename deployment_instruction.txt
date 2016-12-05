@@ -1,0 +1,16 @@
+Deployment instruction :
+
+I have deployed this on free server "pythonanywhere":
+
+1. Upload codes into Github.
+2. Create an account at pythonanywhere (https://www.pythonanywhere.com) for deploy purpose.
+3. Clone the codes to pythonanywhere from github (using pythonanywhere console).
+4. Manage the files (html/css/js/db)
+5. create webname and host it.
+
+Reference :
+1. https://www.pythonanywhere.com/details/django_hosting
+2. https://tutorial.djangogirls.org/en/deploy/
+
+
+ 
